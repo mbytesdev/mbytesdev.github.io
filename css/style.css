@@ -1,0 +1,33 @@
+h2
+{
+    font-size: 64px;
+}
+h3
+{
+    color: rgb(22, 161, 242);
+    font-size: 64;
+}
+#banner
+{
+    overflow: hidden;
+    padding: 10em 0em;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+#image
+{
+    width: 64px;
+    height: 64px;
+}
+#wrapper
+{
+    display: inline-block;
+}
+#featured-wrapper
+{
+    position: relative;
+    padding: 6em 0em;
+    background: #0c0e0f;
+    text-align: center;
+}
