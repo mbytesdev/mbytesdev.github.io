@@ -1,33 +1,109 @@
-h2
+body
 {
+    margin: 0;
+    background-color: darkgray;
+}
+.Banner
+{
+    height: auto    ;
+    width: auto;
+    overflow: hidden;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, red, blue);
+}
+.Navigation
+{
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 100%;
+    display: table;
+    text-align: center;
+}
+.Navigation ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: none;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Navigation li
+{
+    float: left;
+    width: 160px;
+    display: block;
+}
+.Navigation a
+{
+    display: block;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16px;
+    padding: 8px;
+    background-color: aqua;
+}
+.AboutMe
+{
+    clear: both;
+    width: auto;
+}
+.AboutMe img
+{
+    align-content: left;
+    width: 256px;
+    float: left;
+}
+.AboutMeText
+{
+    font-family: Arial;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+h1
+{
+    font-family: Stencil;
     font-size: 64px;
 }
-h3
+h2
 {
-    color: rgb(22, 161, 242);
-    font-size: 64;
-}
-#banner
-{
-    overflow: hidden;
-    padding: 10em 0em;
+    margin: 0;
+    font-size: 64px;
     text-align: center;
-    z-index: 1;
-    position: relative;
 }
-#image
+.SocialLinks
 {
-    width: 64px;
+    clear: both;
+    background-image: linear-gradient(to bottom right, red, blue);
+}
+.Links
+{
+    display: table;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+.Link
+{
+    padding: 0;
+    width: auto;
+    display: block;
+    float: left;
+}
+.Link a
+{
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+.Link img
+{
+    padding-top: 8px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 0;
     height: 64px;
-}
-#wrapper
-{
-    display: inline-block;
-}
-#featured-wrapper
-{
-    position: relative;
-    padding: 6em 0em;
-    background: #0c0e0f;
-    text-align: center;
+    width: auto;
 }
