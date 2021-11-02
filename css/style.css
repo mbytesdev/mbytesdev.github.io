@@ -99,6 +99,9 @@ h3 {font-size: var(--fs-h3);}
 .project__img {
     box-shadow: var(--bs);
 }
+iframe {
+    width: 100%;
+}
 @media (min-width: 800px) {
     .projects {
         display: grid;
