@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html>
-<!--<meta http-equiv="refresh" content="5" ; URL=file:./index.html>-->
+<html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="./icon.png">
 <link rel="stylesheet" href="css/style.css" />
-
 <head>
     <title>Mike Haltiner - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!--<header>
+    <header>
         <div class="Navigation">
-            <button class="nav-toggle">
-                <span class=""></span>
+            <button class="nav-toggle" title="navigation button">
+                <span class="hamburger"></span>
             </button>
             <nav class="nav">
-                <ul>
+                <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
                     <li class="nav__item"><a class="nav__link" href="#about">About Me</a></li>
                     <li class="nav__item"><a class="nav__link" href="#projects">Projects</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#social-links">Social Links</a></li>
                 </ul>
             </nav>
         </div>
-    </header>-->
+    </header>
     <!-- Inhalt -->
     <section class="intro" id="home">
-        <h1 class="section__title section__title--intro">Portfolio - Mike Haltiner</h1>
+        <h1 class="section__title section__title--intro">Portfolio<br>Mike Haltiner</h1>
     </section>
-
     <!-- About -->
     <section class="about-me" id="about">
         <h2 class="section__title section__title--about-me">About Me</h2>
         <img class="about-me__img" src="images/Mike.jpeg" alt="Mike Haltiner">
-        <h3 class="section__content">Hey I'm Mike, nice to see you here!<br>This site is currently under development!
-        </h3>
+        <h3 class="section__content section__content--about-me">Hey I'm Mike, nice to see you here!</h3>
+        <p>Note: This site is currently under development!</p>
     </section>
-
+    <!-- Projects -->
     <section class="my-projects" id="projects">
         <h2 class="section__title">Projects</h2>
-        <p></p>
         <div class="projects">
-
             <div class="project">
                 <h3 class="project__title">SuperSwipe</h3>
                 <a href="https://www.superswipe.games/" target="_blank">
@@ -52,7 +47,6 @@
                     Our first game called „SumoVolley“ is currently in development, stay tuned for upcomming dev-blogs.
                 </p>
             </div>
-
             <div class="project">
                 <h3 class="project__title">nalPoN</h3>
                 <iframe frameborder="0" src="https://itch.io/embed/724307?dark=true">
@@ -63,7 +57,6 @@
                     At a later point in my study, I updated the project with local network functionality.<br>
                     (Update is yet not published)</p>
             </div>
-
             <div class="project">
                 <h3 class="project__title">Orbers</h3>
                 <!--<img class="project__img" src="./images/ProjectThumbnail.jpg" alt="" href>-->
@@ -72,44 +65,39 @@
                 </iframe>
                 <p>First ever game jam project of mine. You'll find more information of the jam on the itch.io page.</p>
             </div>
-
         </div>
     </section>
-
-    <footer>
+    <!-- Footer -->
+    <footer id="social-links">
         <h2 class="section__title section__title--footer">Social Links</h2>
         <div class="social-links">
             <div class="social-link">
                 <a href="https://twitter.com/Mike_GM4" target="_blank">
-                    <img id="link-image" src="images/Twitter.png" alt="Twitter">
+                    <img class="link-image" src="images/Twitter.png" alt="Twitter">
                 </a>
             </div>
             <div class="social-link">
                 <a href="https://Twitch.com/Gamermusic4" target="_blank">
-                    <img id="link-image" src="images/Twitch.png" alt="Twitch">
+                    <img class="link-image" src="images/Twitch.png" alt="Twitch">
                 </a>
             </div>
-
             <div class="social-link">
                 <a href="https://youtube.com/Gamermusic4" target="_blank">
-                    <img id="link-image" src="images/YouTube.png" alt="YouTube">
+                    <img class="link-image" src="images/YouTube.png" alt="YouTube">
                 </a>
             </div>
-
             <div class="social-link">
                 <a href="https://www.linkedin.com/in/mike-max-haltiner-251125201/" target="_blank">
-                    <img id="link-image" src="images/Linkedin.png" alt="LinkedIn">
+                    <img class="link-image" src="images/Linkedin.png" alt="LinkedIn">
                 </a>
             </div>
-
             <div class="social-link">
                 <a href="https://github.com/Gamermusic4" target="_blank">
-                    <img id="link-image" src="images/Github.png" alt="Github">
+                    <img class="link-image" src="images/Github.png" alt="Github">
                 </a>
             </div>
-
         </div>
     </footer>
+    <script src="js/index.js"></script>
 </body>
-
 </html>
