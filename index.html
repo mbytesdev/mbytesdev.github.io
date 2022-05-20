@@ -2,7 +2,7 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="./images/icon.png">
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/style.css"/>
 
 <head>
     <title>Mike Haltiner - Portfolio</title>
@@ -27,52 +27,56 @@
     </header>
     <!-- Inhalt -->
     <section class="intro" id="home">
-        <h1 class="section__title section__title--intro">Portfolio<br>Mike Haltiner</h1>
+        <h1 class="section__title section__title--intro">Portfolio | Mike Haltiner</h1>
     </section>
     <!-- About -->
-    <section class="about-me" id="about">
-        <h2 class="section__title section__title--about-me">About Me</h2>
-        <img class="about-me__img" src="images/Mike.jpeg" alt="Mike Haltiner">
-        <h3 class="section__content section__content--about-me">Hey I'm Mike, nice to see you here!</h3>
-        <p>Note: This site is currently under development!</p>
+    <section class="about" id="about">
+        <!--<h2 class="section__title section__title--about">About Me</h2>-->
+        <img class="about-img" src="images/Mike.jpeg" alt="Mike Haltiner">
+        <h3 class="section__content section__content--about">Hello there, nice to see you here!</h3>
+        <p class="content">
+            Hey, I'm Mike, currently working at SAE Institute Zürich as supervisor and lecturer in Games Programming,
+            parallel I'm in my bachelor studies.</br>
+            As a nerd in all kinds of tech, I’m enthusiastic to learn new things.</br>
+            I started my work career as polymechanic, but after a few years, it was time for something new.
+            My choice was to start my life as a student at SAE.</br>
+            So here I am, ready for every challenge you will throw at me.</br>
+            <!--Press my face to look at my Skils-->
+        </p>
     </section>
     <!-- Projects -->
     <section class="my-projects" id="projects">
         <h2 class="section__title">Projects</h2>
         <div class="projects">
             <div class="project">
-                <h3 class="project__title">SuperSwipe</h3>
-                <a href="https://www.superswipe.games/" target="_blank">
-                    <img class="project__img" src="./images/superswipe.jfif" alt="" href>
-                </a>
-                <p>SuperSwipe - We are a small team of game developer based in switzerland.<br>
+                <h3 class="project-title">SuperSwipe</h3>
+                <a class="project-link" href="https://www.superswipe.games/" target="_blank">
+                    <img class="project-img" src="images/Project_Superswipe.png" alt="superswipe"> </a>
+                <p class="project-content">SuperSwipe - We are a small team of game developer based in switzerland.<br>
                     Our first game called „SumoVolley“ is currently in development, stay tuned for upcomming dev-blogs.
                 </p>
             </div>
             <div class="project">
-                <h3 class="project__title">Self Driving Car (Nerual Network)</h3>
-                <iframe frameborder="0" src="https://itch.io/embed/1255570?dark=true">
-                    <a href="https://.itch.io/self-driving-car">Neural Network by Gamermusic4</a>
-                </iframe>
-                <p>Artificial Intelligence<br>
+                <h3 class="project-title">Self Driving Car (Nerual Network)</h3>
+                <a class="project-link" href="https://gamermusic4.itch.io/self-driving-car" target="_blank">
+                    <img class="project-img" src="images/Project_SDC.png" alt="Self Driving Car (Nerual Network)"> </a>
+                <p class="project-content">Artificial Intelligence<br>
                     At SAE one module is dedicated to AI. We looked at classic AI and self learning / neural networks.
                 </p>
             </div>
             <div class="project">
-                <h3 class="project__title">nalPoN</h3>
-                <iframe frameborder="0" src="https://itch.io/embed/724307?dark=true">
-                    <a href="https://.itch.io/nalpon">nalPoN by Gamermusic4</a>
-                </iframe>
-                <p>The project for Brackeys Rewind Jam2020.2.<br>
+                <h3 class="project-title">nalPoN</h3>
+                <a class="project-link" href="https://gamermusic4.itch.io/nalpon" target="_blank">
+                    <img class="project-img" src="images/Project_nalPoN.png" alt="nalPoN"> </a>
+                <p class="project-content">The project for Brackeys Rewind Jam2020.2.<br>
                     Together with a good friend of mine I created a prototype of a FPS game with rewind function.<br>
                     At a later point in my study, I updated the project with local network functionality.</p>
             </div>
             <div class="project">
-                <h3 class="project__title">Orbers</h3>
-                <iframe frameborder="0" src="https://itch.io/embed/595604?dark=true">
-                    <a href="https://.itch.io/orbrs">orb'rs by Gamermusic4</a>
-                </iframe>
-                <p>First ever game jam project of mine. You'll find more information of the jam on the itch.io page.</p>
+                <h3 class="project-title">Orbers</h3>
+                <a class="project-link" href="https://gamermusic4.itch.io/orbrs" target="_blank">
+                    <img class="project-img" src="images/Project_Orbers.png" alt="Orbers"> </a>
+                <p class="project-content">First ever game jam project of mine. Even before I started at SAE. You'll find more information about the jam within the itch.io page.</p>
             </div>
         </div>
     </section>
@@ -109,5 +113,4 @@
     </footer>
     <script src="js/index.js"></script>
 </body>
-
 </html>
