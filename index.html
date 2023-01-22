@@ -2,7 +2,9 @@
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="./images/icon.png">
-<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/nav.css" />
+<link rel="stylesheet" href="css/index.css" />
 
 <head>
     <title>Mike Haltiner - Portfolio</title>
@@ -20,89 +22,98 @@
                     <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
                     <li class="nav__item"><a class="nav__link" href="#about">About Me</a></li>
                     <li class="nav__item"><a class="nav__link" href="#projects">Projects</a></li>
-                    <li class="nav__item"><a class="nav__link" href="#social-links">Social Links</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#footer">Social Links</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <!-- Inhalt -->
-    <section class="intro" id="home">
-        <h1 class="section__title section__title--intro">Portfolio | Mike Haltiner</h1>
-    </section>
-    <!-- About -->
-    <section class="about" id="about">
-        <!--<h2 class="section__title section__title--about">About Me</h2>-->
-        <img class="about-img" src="images/Mike.jpeg" alt="Mike Haltiner">
-        <h3 class="section__content section__content--about">Hello there, nice to see you here!</h3>
-        <p class="content">
-            Hey, I'm Mike, currently working at SAE Institute Zürich as supervisor and lecturer in Games Programming,
-            parallel I'm in my bachelor studies.</br>
-            As a nerd in all kinds of tech, I’m enthusiastic to learn new things.</br>
-            I started my work career as polymechanic, but after a few years, it was time for something new.
-            My choice was to start my life as a student at SAE.</br>
-            So here I am, ready for every challenge you will throw at me.</br>
-            <!--Press my face to look at my Skils-->
-        </p>
-    </section>
-    <!-- Projects -->
-    <section class="my-projects" id="projects">
-        <h2 class="section__title">Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3 class="project-title">Self Driving Car (Nerual Network)</h3>
-                <a class="project-link" href="https://gamermusic4.itch.io/self-driving-car" target="_blank">
-                    <img class="project-img" src="images/Project_SDC.png" alt="Self Driving Car (Nerual Network)"> </a>
-                <p class="project-content">Artificial Intelligence<br>
-                    At SAE one module is dedicated to AI. We looked at classic AI and self learning / neural networks.
-                </p>
+
+    <div class="main">
+        <!-- Inhalt -->
+        <section class="intro" id="home">
+            <a href="E-Learning/elearning.html">
+                <h1 class="section__title section__title--intro">Portfolio | Mike Haltiner</h1>
+            </a>
+        </section>
+        <!-- About -->
+        <section class="about" id="about">
+            <!--<h2 class="section__title section__title--about">About Me</h2>-->
+            <img class="about-img" src="images/Mike.jpeg" alt="Mike Haltiner">
+            <h3 class="section__content section__content--about">Hello there, nice to see you here!</h3>
+            <p class="content">
+                Hey, I'm Mike, currently working at SAE Institute Zürich as supervisor and lecturer in Games
+                Programming,
+                parallel I'm in my bachelor studies.</br>
+                As a nerd in all kinds of tech, I’m enthusiastic to learn new things.</br>
+                I started my work career as polymechanic, but after a few years, it was time for something new.
+                My choice was to start my life as a student at SAE.</br>
+                So here I am, ready for every challenge you will throw at me.</br>
+                <!--Press my face to look at my Skils-->
+            </p>
+        </section>
+        <!-- Projects -->
+        <section class="my-projects" id="projects">
+            <h2 class="section__title">Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3 class="project-title">Self Driving Car (Nerual Network)</h3>
+                    <a class="project-link" href="https://gamermusic4.itch.io/self-driving-car" target="_blank">
+                        <img class="project-img" src="images/Project_SDC.png" alt="Self Driving Car (Nerual Network)">
+                    </a>
+                    <p class="project-content">Artificial Intelligence<br>
+                        At SAE one module is dedicated to AI. We looked at classic AI and self learning / neural
+                        networks.
+                    </p>
+                </div>
+                <div class="project">
+                    <h3 class="project-title">nalPoN</h3>
+                    <a class="project-link" href="https://gamermusic4.itch.io/nalpon" target="_blank">
+                        <img class="project-img" src="images/Project_nalPoN.png" alt="nalPoN"> </a>
+                    <p class="project-content">The project for Brackeys Rewind Jam2020.2.<br>
+                        Together with a good friend of mine I created a prototype of a FPS game with rewind
+                        function.<br>
+                        At a later point in my study, I updated the project with local network functionality.</p>
+                </div>
+                <div class="project">
+                    <h3 class="project-title">Orbers</h3>
+                    <a class="project-link" href="https://gamermusic4.itch.io/orbrs" target="_blank">
+                        <img class="project-img" src="images/Project_Orbers.png" alt="Orbers"> </a>
+                    <p class="project-content">First ever game jam project of mine. Even before I started at SAE. You'll
+                        find more information about the jam within the itch.io page.</p>
+                </div>
             </div>
-            <div class="project">
-                <h3 class="project-title">nalPoN</h3>
-                <a class="project-link" href="https://gamermusic4.itch.io/nalpon" target="_blank">
-                    <img class="project-img" src="images/Project_nalPoN.png" alt="nalPoN"> </a>
-                <p class="project-content">The project for Brackeys Rewind Jam2020.2.<br>
-                    Together with a good friend of mine I created a prototype of a FPS game with rewind function.<br>
-                    At a later point in my study, I updated the project with local network functionality.</p>
-            </div>
-            <div class="project">
-                <h3 class="project-title">Orbers</h3>
-                <a class="project-link" href="https://gamermusic4.itch.io/orbrs" target="_blank">
-                    <img class="project-img" src="images/Project_Orbers.png" alt="Orbers"> </a>
-                <p class="project-content">First ever game jam project of mine. Even before I started at SAE. You'll find more information about the jam within the itch.io page.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+
+    </div>
     <!-- Footer -->
-    <footer id="social-links">
-        <h2 class="section__title section__title--footer">Social Links</h2>
-        <div class="social-links">
-            <div class="social-link">
-                <a href="https://twitter.com/Mike_GM4" target="_blank">
-                    <img class="link-image" src="images/Twitter.png" alt="Twitter">
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://Twitch.com/Gamermusic4" target="_blank">
-                    <img class="link-image" src="images/Twitch.png" alt="Twitch">
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://youtube.com/Gamermusic4" target="_blank">
-                    <img class="link-image" src="images/YouTube.png" alt="YouTube">
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://www.linkedin.com/in/mike-max-haltiner-251125201/" target="_blank">
-                    <img class="link-image" src="images/Linkedin.png" alt="LinkedIn">
-                </a>
-            </div>
-            <div class="social-link">
-                <a href="https://github.com/Gamermusic4" target="_blank">
-                    <img class="link-image" src="images/Github.png" alt="Github">
-                </a>
+    <footer class="footer" id="footer">
+        <div class="main">
+            <h2 class="section__title section__title--footer">Social Links</h2>
+            <div class="social-links">
+                <div class="social-link">
+                    <a href="https://twitter.com/Mike_GM4" target="_blank">
+                        <img class="link-image" src="images/Twitter.png" alt="Twitter"> </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://Twitch.com/Gamermusic4" target="_blank">
+                        <img class="link-image" src="images/Twitch.png" alt="Twitch"> </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://youtube.com/Gamermusic4" target="_blank">
+                        <img class="link-image" src="images/YouTube.png" alt="YouTube"> </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://www.linkedin.com/in/mike-max-haltiner-251125201/" target="_blank">
+                        <img class="link-image" src="images/Linkedin.png" alt="LinkedIn"> </a>
+                </div>
+                <div class="social-link">
+                    <a href="https://github.com/Gamermusic4" target="_blank">
+                        <img class="link-image" src="images/Github.png" alt="Github"> </a>
+                </div>
             </div>
         </div>
     </footer>
     <script src="js/index.js"></script>
 </body>
+
 </html>

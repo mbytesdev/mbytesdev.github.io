@@ -1,0 +1,133 @@
+/* Intro */
+/* About Me */
+.about-img {
+    display: none;
+    box-shadow: var(--bs);
+    max-width: 40vw;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 2em;
+    padding: 0;
+}
+
+.section__title--about {
+    margin: 0;
+}
+
+.about p {
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .about {
+        display: grid;
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subTitle"
+            "img subTitle";
+        grid-template-columns: min-content;
+        justify-content: left;
+    }
+
+    .about-img {
+        display: unset;
+    }
+
+    .section__title--about {
+        max-width: 30em;
+    }
+
+    .section__content--about {
+        margin: 0;
+        padding-left: 2rem;
+    }
+
+    .about p {
+        padding-left: 2rem;
+        padding-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    .about-img {
+        grid-area: img;
+        max-width: 30rem;
+        max-height: 80vh;
+        margin-top: 0;
+        margin-left: 0;
+        margin-bottom: auto;
+    }
+}
+
+/* Projects */
+.project {
+    margin-bottom: 3rem;
+    padding: 0;
+}
+
+.project-title {
+    margin: 5rem 0 1rem 0;
+    color: var(--clr-accent);
+}
+
+.project-img {
+    box-shadow: var(--bs);
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.project-content {
+    margin: 0;
+}
+
+@media (min-width: 900px) {
+    .projects {
+        display: grid;
+        grid-column-gap: 6rem;
+        grid-row-gap: 6rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-img:hover {
+        filter: blur(10px);
+    }
+
+    .project p {
+        margin: 0;
+        max-width: inherit;
+        font-size: 1.25rem;
+        text-align: justify;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.section__title--footer {
+    margin: 0;
+    padding: 2rem 0 1rem 0;
+}
+
+.social-links {
+    display: flex;
+    align-content: left;
+}
+
+.social-link {
+    max-width: 3rem;
+    margin: 1rem;
+}
+
+.link-image {
+    display: block;
+    max-width: 100%;
+}
+
+@media (min-width: 900px) {
+    .social-link {
+        max-width: 4rem;
+    }
+}
