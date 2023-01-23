@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="utf8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="../images/icon.png">
 <link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="css/elearning.css" />
+<link rel="stylesheet" href="../css/code.css">
+<link rel="stylesheet" href="css/elearning.css">
 
 <head>
     <title>Mike Haltiner - E-Learning</title>
@@ -12,10 +14,68 @@
 
 <body>
     <div class="main">
-
         <section class="pagehead">
             <a href="../index.html"><img src="../images/Logo_Simple_Round_Black.png" alt="Logo, Link to home"></a>
-            <h1>E-Learning</h1>
+            <h1>E-Learning: C-Make</h1>
+        </section>
+        <ul class="content-list">
+            <li>What is this about?</li>
+            <li>Who is this for?</li>
+            <li>What do we need?</li>
+            <li>Basic Setup</li>
+        </ul>
+        <section class="ch">
+            <h2 class="ch__title">What is this about?</h2>
+            <p class="ch_content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
+                Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
+                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
+            </p>
+        </section>
+        <section class="ch">
+            <h2 class="ch__title">Who is this for?</h2>
+            <p class="ch_content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
+                Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
+                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
+            </p>
+        </section>
+        <section class="ch">
+            <h2 class="ch__title">What do we need?</h2>
+            <p class="ch_content"><a href="https://git-scm.com/">Git</a></p>
+            <p class="ch_content"><a href="https://github.com/microsoft/vcpkg">vcpkg</a></p>
+            <p class="ch_content"><a href="https://cmake.org/">CMake</a></p>
+            <p class="ch_content"><a href=""></a></p>
+
+        </section>
+        <section class="ch">
+            <h2 class="ch__title">Code Test #1</h2>
+            <p class="ch_content">Here is a line of code:</p>
+            <div class="pre">
+                <div class="console">vcpkg install zlib:x64-windows
+                    vcpkg install blosc:x64-windows
+                    vcpkg install tbb:x64-windows
+                    vcpkg install boost-iostreams:x64-windows
+                    vcpkg install boost-any:x64-windows
+                    vcpkg install boost-algorithm:x64-windows
+                    vcpkg install boost-uuid:x64-windows
+                    vcpkg install boost-interprocess:x64-windows
+                </div>
+            </div>
+        </section>
+        <section class="ch">
+            <h2 class="ch__title">Code Test #2</h2>
+            <p class="ch_content"> Here is a line of code: </p>
+            <div class="pre">
+                <div class="code"><span class="key">private static void</span> <span class="func">Main</span>() => <span class="key">new</span> <span class="class">Program</span>().<span class="func">Run</span>(<span class="str">"String"</span>);
+                    <span class="key">internal static void</span> <span class="func">Print</span>(<span class="key">string</span>[] <span class="local">array</span>) {
+                    <span class="logic">for</span> (<span class="key">int</span> <span class="local">x</span> = <span class="num">0</span>; <span class="local">x</span> &lt; <span class="local">array</span>.Length; <span class="local">x</span>++) {
+                    <span class="class">Console</span>.<span class="func">WriteLine</span>(<span class="local">array</span>[<span class="local">x</span>]);
+                    }
+                }
+                </div>
+            </div>
+            <object data="./Untitled.cs" width="300" height="200">Not supported</object>
         </section>
         <section class="ch">
             <h2 class="ch__title">CMake</h2>
@@ -23,37 +83,7 @@
             <p class="ch_content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
                 Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
-                lectus laoreet ante, quis vestibulum ipsum justo id lorem. Quisque semper ultricies justo, ac pharetra
-                velit. Ut et ante ac purus eleifend interdum dignissim aliquet nulla. Pellentesque habitant morbi
-                tristique senectus et netus et malesuada fames ac turpis egestas. Sed vulputate ex vel eros sollicitudin
-                porta. Aliquam ac elit quis elit rhoncus sollicitudin ut et mi. Donec facilisis nisi leo.
-                Fusce interdum arcu nec diam viverra elementum. Aenean ornare sodales euismod. Phasellus in suscipit
-                lorem, non porta purus. Vestibulum et consequat lectus, at scelerisque enim. Quisque nec eleifend
-                sapien, eget lobortis eros. Aliquam erat volutpat. Fusce pulvinar sapien fermentum, posuere est eu,
-                faucibus nunc. Nullam a sapien vitae quam lobortis mollis vitae et justo. Quisque iaculis velit vel
-                risus pellentesque sodales. Quisque mattis risus a nisi porta cursus. Aliquam faucibus pretium leo a
-                volutpat. Curabitur vitae laoreet magna. Sed elit felis, vulputate a posuere eget, lobortis ut diam.
-                Quisque eget sapien ligula. Morbi luctus cursus tristique.
-                Donec eget viverra justo, non auctor enim. Pellentesque sed ipsum nisi. Quisque non tincidunt sapien. Ut
-                semper venenatis hendrerit. Aenean dictum leo quis ullamcorper dignissim. Maecenas id dui enim. Aliquam
-                nec nunc nibh. Nulla laoreet vel risus ac feugiat. Pellentesque rutrum, ligula nec commodo pretium, urna
-                dolor dictum tellus, eleifend bibendum lorem mauris at nunc. Vestibulum ante ipsum primis in faucibus
-                orci luctus et ultrices posuere cubilia curae;
-                Vestibulum enim tortor, posuere eu facilisis quis, pellentesque quis turpis. Cras vitae quam odio.
-                Nullam ut aliquam quam. Nunc sit amet erat ultrices, viverra nibh et, volutpat libero. In auctor pretium
-                diam nec rhoncus. Aliquam vitae nulla et urna luctus semper eget sit amet purus. Nulla dignissim, leo
-                sed convallis aliquam, ipsum sem lobortis lectus, eget mollis dui lorem id lectus. Nullam nec vestibulum
-                arcu. In hac habitasse platea dictumst. In accumsan, ipsum sed luctus dictum, elit turpis molestie
-                mauris, molestie posuere mauris arcu vel turpis. Morbi tincidunt faucibus ipsum, ac tempor arcu auctor
-                ac. Aenean faucibus, elit et tincidunt aliquet, nunc felis rhoncus risus, at pretium elit lectus eu mi.
-                Suspendisse tempus mi et pulvinar sagittis. Donec viverra congue ex. Etiam nec massa pharetra, laoreet
-                purus quis, pulvinar tellus. Nunc eget ex ultrices turpis dictum ullamcorper sit amet vel augue.
-                Nulla sodales sem non tempor consectetur. Aliquam et congue nisl. Duis porta quam id mi porta, sed
-                pretium urna tempor. Etiam eu aliquet enim. Praesent pulvinar elementum bibendum. Aenean fringilla est
-                justo, eu porta mi tempor ac. Duis sodales odio eu tempus commodo. Morbi vitae purus accumsan,
-                sollicitudin nibh sit amet, maximus dui. Maecenas gravida orci arcu, id auctor libero mollis nec. Donec
-                ultricies sed elit sed scelerisque. Etiam laoreet interdum elit, et consectetur diam laoreet vel. Ut
-                vulputate mauris sed mi egestas mattis. Duis sed risus et nisl commodo ullamcorper.
+                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
             </p>
         </section>
     </div>
