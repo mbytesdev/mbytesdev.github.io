@@ -14,9 +14,14 @@
     height: var(--fs-h1);
 }
 
+ul.content-list {
+    list-style-type: circle;
+}
+
 .ch__title {
     margin: 0;
     padding: 2rem 0 1rem 0;
+    font-family: var(--ff-secondary);
 }
 
 .ch__img {

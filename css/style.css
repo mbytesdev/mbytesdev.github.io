@@ -3,8 +3,8 @@ html {
 }
 
 :root {
-    --ff-primary: 'Source Code Pro', monospace;
-    --ff-secondary: '';
+    --ff-primary: "Segoe UI";
+    --ff-secondary: "Source Code Pro";
 
     --fw-reg: 300;
     --fw-bold: 900;

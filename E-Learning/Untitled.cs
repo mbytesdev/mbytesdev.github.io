@@ -1,0 +1,1 @@
+private static void Main() => new SAEBot().RunBotAsync().GetAwaiter().GetResult();
