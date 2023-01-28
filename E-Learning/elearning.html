@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/elearning.css">
 
 <head>
-    <title>Mike Haltiner - E-Learning</title>
+    <title>MH - C-Make</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 
@@ -19,37 +19,50 @@
             <h1>E-Learning: C-Make</h1>
         </section>
         <ul class="content-list">
-            <li>What is this about?</li>
+            <li>Introduction</li>
             <li>Who is this for?</li>
             <li>What do we need?</li>
             <li>Basic Setup</li>
         </ul>
         <section class="ch">
-            <h2 class="ch__title">What is this about?</h2>
+            <h2 class="ch_title">Introduction</h2>
             <p class="ch_content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
-                Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
-                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
+                OpenVDB is a powerful open-source library for efficient manipulation of volumetric data, and CMake is a
+                versatile build system that can be used to manage and configure a project's dependencies and build
+                processes. In this documentation, we will explain how to use OpenVDB and CMake together to build and
+                configure your projects.
             </p>
         </section>
         <section class="ch">
-            <h2 class="ch__title">Who is this for?</h2>
-            <p class="ch_content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
-                Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
-                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
-            </p>
+            <h2 class="ch_title">Who is this for?</h2>
+            <div class="ch_double_content">
+                <p class="ch_content">This is for you when:</p>
+                <p class="ch_content">This isn't for you when:</p>
+            </div>
+            <div class="ch_double_content">
+                <ul class="content-list">
+                    <li>You already have some experience with C++</li>
+                    <li>You know how to use git</li>
+                    <li>You want to start using CMake on Windows</li>
+                    <li>You don't know where to start with openVDB</li>
+                </ul>
+                <ul class="content-list">
+                    <li>You have no experience with programming</li>
+                    <li>You are a master in CMake</li>
+                    <li>You already worked with openVDB</li>
+                </ul>
+            </div>
         </section>
         <section class="ch">
-            <h2 class="ch__title">What do we need?</h2>
-            <p class="ch_content"><a href="https://git-scm.com/">Git</a></p>
+            <h2 class="ch_title">What do we need to start?</h2>
+            <p class="ch_content">We'll need <a href="https://git-scm.com/">Git</a> to be installed, so we can use it
+                within the terminal.</p>
+            <p class="ch_content">We also need to install <a href="https://cmake.org/">CMake</a>.
+                Please make sure to add CMake to the system path at least for the current user.</p>
             <p class="ch_content"><a href="https://github.com/microsoft/vcpkg">vcpkg</a></p>
-            <p class="ch_content"><a href="https://cmake.org/">CMake</a></p>
-            <p class="ch_content"><a href=""></a></p>
-
         </section>
         <section class="ch">
-            <h2 class="ch__title">Code Test #1</h2>
+            <h2 class="ch_title">Code Test #1</h2>
             <p class="ch_content">Here is a line of code:</p>
             <div class="pre">
                 <div class="console">vcpkg install zlib:x64-windows
@@ -64,21 +77,26 @@
             </div>
         </section>
         <section class="ch">
-            <h2 class="ch__title">Code Test #2</h2>
+            <h2 class="ch_title">Code Test #2</h2>
             <p class="ch_content"> Here is a line of code: </p>
             <div class="pre">
-                <div class="code"><span class="key">private static void</span> <span class="func">Main</span>() => <span class="key">new</span> <span class="class">Program</span>().<span class="func">Run</span>(<span class="str">"String"</span>);
-                    <span class="key">internal static void</span> <span class="func">Print</span>(<span class="key">string</span>[] <span class="local">array</span>) {
-                    <span class="logic">for</span> (<span class="key">int</span> <span class="local">x</span> = <span class="num">0</span>; <span class="local">x</span> &lt; <span class="local">array</span>.Length; <span class="local">x</span>++) {
-                    <span class="class">Console</span>.<span class="func">WriteLine</span>(<span class="local">array</span>[<span class="local">x</span>]);
-                    }
-                }
+                <div class="code"><span class="key">private static void</span> <span class="func">Main</span>() => <span class="key">new</span> <span class="class">Program</span>().<span class="func">Run</span>(<span
+                        class="str">"String"</span>);
+                    <span class="key">internal static void</span> <span class="func">Print</span>(<span
+                        class="key">string</span>[] <span class="local">array</span>)
+                        {
+                            &nbsp;<span class="logic">for</span> (<span class="key">int</span> <span class="local">x</span> = <span
+                        class="num">0</span>; <span class="local">x</span> &lt; <span class="local">array</span>.Length;<span class="local">x</span>++)
+                        &nbsp;{
+                            &nbsp;&nbsp;<span class="class">Console</span>.<span class="func">WriteLine</span>(<span
+                        class="local">array</span>[<span class="local">x</span>]);
+                        &nbsp;}
+                        }
                 </div>
             </div>
-            <object data="./Untitled.cs" width="300" height="200">Not supported</object>
         </section>
         <section class="ch">
-            <h2 class="ch__title">CMake</h2>
+            <h2 class="ch_title">CMake</h2>
             <img class="ch__img" src="images/Temp16-9.png" alt="Temp">
             <p class="ch_content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.

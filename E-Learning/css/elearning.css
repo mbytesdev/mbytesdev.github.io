@@ -18,7 +18,7 @@ ul.content-list {
     list-style-type: circle;
 }
 
-.ch__title {
+.ch_title {
     margin: 0;
     padding: 2rem 0 1rem 0;
     font-family: var(--ff-secondary);
@@ -34,14 +34,23 @@ ul.content-list {
     text-align: justify;
 }
 
+.ch a {
+    color: var()
+}
+
 @media (min-width: 900px) {
     .pagehead {
         display: flex;
         padding: 3rem 0 4rem 0;
     }
 
-    .ch__title {
+    .ch_title {
         padding: 6rem 0 4rem 0;
+    }
+
+    .ch_double_content {
+        display: grid;
+        grid-template-columns: auto auto;
     }
 }
 
