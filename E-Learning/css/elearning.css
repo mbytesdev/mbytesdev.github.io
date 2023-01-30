@@ -14,6 +14,22 @@
     height: var(--fs-h1);
 }
 
+a:link {
+    color: #00ff00;
+}
+
+a:visited {
+    color: yellow;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: pink;
+}
+
 ul.content-list {
     list-style-type: circle;
 }
@@ -22,6 +38,7 @@ ul.content-list {
     margin: 0;
     padding: 2rem 0 1rem 0;
     font-family: var(--ff-secondary);
+    color: var(--clr-accent)
 }
 
 .ch__img {
@@ -34,8 +51,12 @@ ul.content-list {
     text-align: justify;
 }
 
-.ch a {
-    color: var()
+.ch_double_content {
+    display: block;
+}
+
+table {
+    width: 100%;
 }
 
 @media (min-width: 900px) {
@@ -53,7 +74,6 @@ ul.content-list {
         grid-template-columns: auto auto;
     }
 }
-
 
 .dual {
     display: grid;

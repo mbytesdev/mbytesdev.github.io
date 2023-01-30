@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/elearning.css">
 
 <head>
-    <title>MH - C-Make</title>
+    <title>MH - OpenVDB</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 
@@ -16,7 +16,7 @@
     <div class="main">
         <section class="pagehead">
             <a href="../index.html"><img src="../images/Logo_Simple_Round_Black.png" alt="Logo, Link to home"></a>
-            <h1>E-Learning: C-Make</h1>
+            <h1>E-Learning: OpenVDB</h1>
         </section>
         <ul class="content-list">
             <li>Introduction</li>
@@ -36,21 +36,25 @@
         <section class="ch">
             <h2 class="ch_title">Who is this for?</h2>
             <div class="ch_double_content">
-                <p class="ch_content">This is for you when:</p>
-                <p class="ch_content">This isn't for you when:</p>
+                <div>
+                    <p class="ch_content">This is for you when:</p>
+                    <ul class="content-list">
+                        <li>You already have some experience with C++</li>
+                        <li>You know how to use git</li>
+                        <li>You want to start using CMake on Windows</li>
+                        <li>You don't know where to start with openVDB</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="ch_content">This isn't for you when:</p>
+                    <ul class="content-list">
+                        <li>You have no experience with programming</li>
+                        <li>You are a master in CMake</li>
+                        <li>You already worked with openVDB</li>
+                    </ul>
+                </div>
             </div>
             <div class="ch_double_content">
-                <ul class="content-list">
-                    <li>You already have some experience with C++</li>
-                    <li>You know how to use git</li>
-                    <li>You want to start using CMake on Windows</li>
-                    <li>You don't know where to start with openVDB</li>
-                </ul>
-                <ul class="content-list">
-                    <li>You have no experience with programming</li>
-                    <li>You are a master in CMake</li>
-                    <li>You already worked with openVDB</li>
-                </ul>
             </div>
         </section>
         <section class="ch">
@@ -59,50 +63,176 @@
                 within the terminal.</p>
             <p class="ch_content">We also need to install <a href="https://cmake.org/">CMake</a>.
                 Please make sure to add CMake to the system path at least for the current user.</p>
-            <p class="ch_content"><a href="https://github.com/microsoft/vcpkg">vcpkg</a></p>
-        </section>
-        <section class="ch">
-            <h2 class="ch_title">Code Test #1</h2>
-            <p class="ch_content">Here is a line of code:</p>
-            <div class="pre">
-                <div class="console">vcpkg install zlib:x64-windows
-                    vcpkg install blosc:x64-windows
-                    vcpkg install tbb:x64-windows
-                    vcpkg install boost-iostreams:x64-windows
-                    vcpkg install boost-any:x64-windows
-                    vcpkg install boost-algorithm:x64-windows
-                    vcpkg install boost-uuid:x64-windows
-                    vcpkg install boost-interprocess:x64-windows
-                </div>
-            </div>
-        </section>
-        <section class="ch">
-            <h2 class="ch_title">Code Test #2</h2>
-            <p class="ch_content"> Here is a line of code: </p>
-            <div class="pre">
-                <div class="code"><span class="key">private static void</span> <span class="func">Main</span>() => <span class="key">new</span> <span class="class">Program</span>().<span class="func">Run</span>(<span
-                        class="str">"String"</span>);
-                    <span class="key">internal static void</span> <span class="func">Print</span>(<span
-                        class="key">string</span>[] <span class="local">array</span>)
-                        {
-                            &nbsp;<span class="logic">for</span> (<span class="key">int</span> <span class="local">x</span> = <span
-                        class="num">0</span>; <span class="local">x</span> &lt; <span class="local">array</span>.Length;<span class="local">x</span>++)
-                        &nbsp;{
-                            &nbsp;&nbsp;<span class="class">Console</span>.<span class="func">WriteLine</span>(<span
-                        class="local">array</span>[<span class="local">x</span>]);
-                        &nbsp;}
-                        }
-                </div>
-            </div>
-        </section>
-        <section class="ch">
-            <h2 class="ch_title">CMake</h2>
-            <img class="ch__img" src="images/Temp16-9.png" alt="Temp">
-            <p class="ch_content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus ligula at malesuada tempor.
-                Morbi pharetra facilisis nisl ut fringilla. Nullam mattis, tellus consectetur tristique euismod, nulla
-                lectus laoreet ante, quis vestibulum ipsum justo id lorem.
+            <p class="ch_content">If you've done the steps above, let's open a new terminal and create a work folder:
             </p>
+            <div class="pre">
+                <div class="console">mkdir D:\VDB
+                    cd D:\VDB
+                </div>
+            </div>
+        </section>
+        <section class="ch">
+            <h2 class="ch_title">Dependencies</h2>
+            <p class="ch_content">OpenVDB has many dependencies which we need to install first. There are two ways to do
+                this:
+                The first one is to painstakingly download every single library by hand.
+                The second and easier solution, which we use in this guide is with vcpkg.
+            </p>
+            <p class="ch_content"><a href="https://www.openvdb.org/documentation/doxygen/dependencies.html">Vcpkg</a>
+                is a package manager for C++ libraries on Windows, Linux and macOS. It helps to manage
+                dependencies and install libraries on your system. Vcpkg uses a ports system, which is a collection of
+                scripts that define how to build and install a library. This allows us to easily install and use
+                multiple versions of a library and helps to ensure that the libraries are built and installed correctly.
+                Vcpkg also supports package integration with Visual Studio, making it easy to use installed libraries in
+                our C++ projects.
+            </p>
+            <p class="ch_content">Note: If you intent to use vcpkg in general / globaly, it is recommend to install it
+                in a place like C:\vcpkg or C:\dev\vcpkg or similar high level place to quickly locate it. How longer
+                the path the more likely it is to run into errors.
+                For the sake of simplicity we install vcpkg locally in our project folder created before.
+            </p>
+            <p class="ch_content">Let's clone vcpkg from GitHub:</p>
+            <div class="pre">
+                <div class="console">git clone https://github.com/microsoft/vcpkg</div>
+            </div>
+            <p class="ch_content">Once it is done downloading, we need to execute the bootstrap to finalize:</p>
+            <div class="pre">
+                <div class="console">.\vcpkg\bootstrap-vcpkg.bat</div>
+            </div>
+            <p class="ch_content">If the bootstrap completed successfully, we install all libraries we need for now:</p>
+            <div class="pre">
+                <div class="console">.\vcpkg\vcpkg install zlib:x64-windows
+                    .\vcpkg\vcpkg install blosc:x64-windows
+                    .\vcpkg\vcpkg install tbb:x64-windows
+                    .\vcpkg\vcpkg install boost-iostreams:x64-windows
+                    .\vcpkg\vcpkg install boost-any:x64-windows
+                    .\vcpkg\vcpkg install boost-algorithm:x64-windows
+                    .\vcpkg\vcpkg install boost-uuid:x64-windows
+                    .\vcpkg\vcpkg install boost-interprocess:x64-windows
+                </div>
+            </div>
+            <p class="ch_content">Breakdown: .\vcpkg\vcpkg install [packages]:[target]</p>
+            <table>
+                <tr>
+                    <th>Syntax</th>
+                    <th></th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>.\vcpkg\vcpkg</td>
+                    <td>--></td>
+                    <td>the .exe file in the subfolder</td>
+                </tr>
+                <tr>
+                    <td>install</td>
+                    <td>--></td>
+                    <td>command to install</td>
+                </tr>
+                <tr>
+                    <td>[packages]:[target]</td>
+                    <td>--></td>
+                    <td>package name and target architecture</td>
+                </tr>
+            </table>
+            <p class="ch_content">To make use of the libraries within a C++ project in Visual Studio<br>
+                All libraries we just downloaded and will be downloaded in the future will be available:</p>
+            <div class="pre">
+                <div class="console">.\vcpkg integrate install</div>
+            </div>
+            <p class="ch_content">To remove the integration:</p>
+            <div class="pre">
+                <div class="console">.\vcpkg integrate remove</div>
+            </div>
+        </section>
+        <section class="ch">
+            <h2 class="ch_title">Build openVDB with CMake</h2>
+            <p class="ch_content">Continue with the openvdb library:</p>
+            <div class="pre">
+                <div class="console">git clone https://github.com/AcademySoftwareFoundation/openvdb</div>
+            </div>
+            <p class="ch_content">Once it is done downloading, we can start with the configuration of CMake. But first
+                create new folder to build in:</p>
+            <div class="pre">
+                <div class="console">mkdir .\openvdb\build
+                    cd .\openvdb\build
+                </div>
+            </div>
+            <p class="ch_content">XYZ</p>
+            <div class="pre">
+                <div class="console">cmake -DCMAKE_TOOLCHAIN_FILE="D:\VDB\vcpkg\scripts\buildsystems\vcpkg.cmake"
+                    DVCPKG_TARGET_TRIPLET=x64-windows -A x64 ..</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Syntax</th>
+                    <th></th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>cmake</td>
+                    <td>--></td>
+                    <td>to execute code in cmake</td>
+                </tr>
+                <tr>
+                    <td>-DCMAKE_TOOLCHAIN_FILE="path"</td>
+                    <td>--></td>
+                    <td>the path to the vcpkg.cmake file to access the libraries</td>
+                </tr>
+                <tr>
+                    <td>DVCPKG_TARGET_TRIPLET=x64-windows</td>
+                    <td>--></td>
+                    <td>the architecture of the libraries vcpkg will use</td>
+                </tr>
+                <tr>
+                    <td>-A x64</td>
+                    <td>--></td>
+                    <td>the target architecture to build to</td>
+                </tr>
+                <tr>
+                    <td>..</td>
+                    <td>--></td>
+                    <td>where is the CMakeLists.txt to build from (.. means one folder up)</td>
+                </tr>
+            </table>
+            <p class="ch_content">XYZ</p>
+            <div class="pre">
+                <div class="console">cmake --build . --parallel 4 --config Release --target install</div>
+            </div>
+            <table>
+                <tr>
+                    <th>Syntax</th>
+                    <th></th>
+                    <th>Explanation</th>
+                </tr>
+                <tr>
+                    <td>cmake</td>
+                    <td>--></td>
+                    <td>to execute code in cmake</td>
+                </tr>
+                <tr>
+                    <td>--build .</td>
+                    <td>--></td>
+                    <td>to tell cmake we wannt to build followed by a path, the point means where we are right now
+                        (D:/VDB/openvdb/build)</td>
+                </tr>
+                <tr>
+                    <td>--parallel 4</td>
+                    <td>--></td>
+                    <td>How man parallel jobs should run</td>
+                </tr>
+                <tr>
+                    <td>--config Release</td>
+                    <td>--></td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>--target install</td>
+                    <td>--></td>
+                    <td>X</td>
+                </tr>
+            </table>
+            <p class="ch_content">If no error occurred while building openvdb, you should find the library and header
+                files at "C:\Program Files\OpenVDB".</p>
         </section>
     </div>
 </body>
