@@ -4,8 +4,6 @@
 
 .pagehead div {
     margin: 0.2em 1em 0 0;
-    height: var(--fs-header);
-    width: var(--fs-header);
     height: 3rem;
     width: 3rem;
     background-image: url("../../images/Logo_Simple_Round_Black.png");
