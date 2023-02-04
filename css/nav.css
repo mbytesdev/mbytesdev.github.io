@@ -26,7 +26,7 @@ nav {
 .nav__link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h3);
+    font-size: var(--fs-h1);
 }
 
 .nav__link:hover {
@@ -35,12 +35,13 @@ nav {
 
 .nav-toggle {
     padding: .5em;
+    position: absolute;
     background: transparent;
     border: 0;
     cursor: pointer;
-    position: absolute;
-    right: 1em;
-    top: 1em;
+    /*Position*/
+    right: 2rem;
+    top: 2rem;
     z-index: 1000;
 }
 
@@ -54,11 +55,11 @@ nav {
 }
 
 .nav-open .hamburger {
-    transform: rotate(.625turn);
+    transform: rotate(45deg);
 }
 
 .nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px);
+    transform: rotate(90deg) translateX(10px);
 }
 
 .nav-open .hamburger::after {
@@ -69,14 +70,17 @@ nav {
 .hamburger {
     display: block;
     position: relative;
+    height: var(--fs-h1);
 }
 
 .hamburger,
 .hamburger::before,
 .hamburger::after {
     background: var(--clr-accent);
-    width: 2em;
-    height: 3px;
+    /* Line Width */
+    width: 3rem;
+    /* Line Height */
+    height: 5px;
     border-radius: 1em;
     transition: transform 250ms ease-in-out;
 }
@@ -89,20 +93,50 @@ nav {
     right: 0;
 }
 
+/* Top Line */
 .hamburger::before {
-    top: 6px;
+    top: -10px;
 }
 
+/* Bottom Line */
 .hamburger::after {
-    bottom: 6px;
+    bottom: -10px;
 }
 
-.section__title {
-    margin: 3rem 0 4rem 0;
-    padding-left: 0;
-    text-align: left;
-}
+@media (min-width: 900px) {
+    .nav-toggle {
+        padding: 1em;
+        position: absolute;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        /*Position*/
+        right: 4.4rem;
+        top: 2.2rem;
+        z-index: 1000;
+    }
 
-.section__content {
-    margin-left: 0;
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(10px);
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        /* Line Width */
+        width: 3em;
+        /* Line Height */
+        height: 4px;
+        background: red;
+    }
+
+    /* Top Line */
+    .hamburger::before {
+        top: -10px;
+    }
+
+    /* Bottom Line */
+    .hamburger::after {
+        bottom: -10px;
+    }
 }

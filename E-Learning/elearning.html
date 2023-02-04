@@ -5,6 +5,7 @@
 <link rel="icon" type="image/png" href="../images/icon.png">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/code.css">
+<link rel="stylesheet" href="../css/tabs.css">
 <link rel="stylesheet" href="css/elearning.css">
 
 <head>
@@ -13,11 +14,11 @@
 </head>
 
 <body>
+    <header class="pagehead">
+        <div> <a href="../index.html"></a> </div>
+        <h1>E-Learning: OpenVDB</h1>
+    </header>
     <div class="main">
-        <section class="pagehead">
-            <a href="../index.html"><img src="../images/Logo_Simple_Round_Black.png" alt="Logo, Link to home"></a>
-            <h1>E-Learning: OpenVDB</h1>
-        </section>
         <ul class="content-list">
             <li>Introduction</li>
             <li>Who is this for?</li>
@@ -25,8 +26,8 @@
             <li>Basic Setup</li>
         </ul>
         <section class="ch">
-            <h2 class="ch_title">Introduction</h2>
-            <p class="ch_content">
+            <h2 class="chTitle">Introduction</h2>
+            <p class="chContent">
                 OpenVDB is a powerful open-source library for efficient manipulation of volumetric data, and CMake is a
                 versatile build system that can be used to manage and configure a project's dependencies and build
                 processes. In this documentation, we will explain how to use OpenVDB and CMake together to build and
@@ -34,10 +35,10 @@
             </p>
         </section>
         <section class="ch">
-            <h2 class="ch_title">Who is this for?</h2>
+            <h2 class="chTitle">Who is this for?</h2>
             <div class="ch_double_content">
                 <div>
-                    <p class="ch_content">This is for you when:</p>
+                    <p class="chContent">This is for you when:</p>
                     <ul class="content-list">
                         <li>You already have some experience with C++</li>
                         <li>You know how to use git</li>
@@ -46,7 +47,7 @@
                     </ul>
                 </div>
                 <div>
-                    <p class="ch_content">This isn't for you when:</p>
+                    <p class="chContent">This isn't for you when:</p>
                     <ul class="content-list">
                         <li>You have no experience with programming</li>
                         <li>You are a master in CMake</li>
@@ -58,12 +59,12 @@
             </div>
         </section>
         <section class="ch">
-            <h2 class="ch_title">What do we need to start?</h2>
-            <p class="ch_content">We'll need <a href="https://git-scm.com/">Git</a> to be installed, so we can use it
-                within the terminal.</p>
-            <p class="ch_content">We also need to install <a href="https://cmake.org/">CMake</a>.
-                Please make sure to add CMake to the system path at least for the current user.</p>
-            <p class="ch_content">If you've done the steps above, let's open a new terminal and create a work folder:
+            <h2 class="chTitle">What do we need to start?</h2>
+            <p class="chContent">We'll need <a href="https://git-scm.com/">Git</a> to be installed, so we can use it
+                within the terminal.<br>
+                We also need to install <a href="https://cmake.org/">CMake</a>.
+                Please make sure to add CMake to the system path at least for the current user.
+                If you've done the steps above, let's open a new terminal and create a work folder:
             </p>
             <div class="pre">
                 <div class="console">mkdir D:\VDB
@@ -72,13 +73,13 @@
             </div>
         </section>
         <section class="ch">
-            <h2 class="ch_title">Dependencies</h2>
-            <p class="ch_content">OpenVDB has many dependencies which we need to install first. There are two ways to do
+            <h2 class="chTitle">Dependencies</h2>
+            <p class="chContent">OpenVDB has many dependencies which we need to install first. There are two ways to do
                 this:
                 The first one is to painstakingly download every single library by hand.
                 The second and easier solution, which we use in this guide is with vcpkg.
             </p>
-            <p class="ch_content"><a href="https://www.openvdb.org/documentation/doxygen/dependencies.html">Vcpkg</a>
+            <p class="chContent"><a href="https://www.openvdb.org/documentation/doxygen/dependencies.html">Vcpkg</a>
                 is a package manager for C++ libraries on Windows, Linux and macOS. It helps to manage
                 dependencies and install libraries on your system. Vcpkg uses a ports system, which is a collection of
                 scripts that define how to build and install a library. This allows us to easily install and use
@@ -86,20 +87,20 @@
                 Vcpkg also supports package integration with Visual Studio, making it easy to use installed libraries in
                 our C++ projects.
             </p>
-            <p class="ch_content">Note: If you intent to use vcpkg in general / globaly, it is recommend to install it
+            <p class="chContent">Note: If you intent to use vcpkg in general / globaly, it is recommend to install it
                 in a place like C:\vcpkg or C:\dev\vcpkg or similar high level place to quickly locate it. How longer
                 the path the more likely it is to run into errors.
                 For the sake of simplicity we install vcpkg locally in our project folder created before.
             </p>
-            <p class="ch_content">Let's clone vcpkg from GitHub:</p>
+            <p class="chContent">Let's clone vcpkg from GitHub:</p>
             <div class="pre">
                 <div class="console">git clone https://github.com/microsoft/vcpkg</div>
             </div>
-            <p class="ch_content">Once it is done downloading, we need to execute the bootstrap to finalize:</p>
+            <p class="chContent">Once it is done downloading, we need to execute the bootstrap to finalize:</p>
             <div class="pre">
                 <div class="console">.\vcpkg\bootstrap-vcpkg.bat</div>
             </div>
-            <p class="ch_content">If the bootstrap completed successfully, we install all libraries we need for now:</p>
+            <p class="chContent">If the bootstrap completed successfully, we install all libraries we need for now:</p>
             <div class="pre">
                 <div class="console">.\vcpkg\vcpkg install zlib:x64-windows
                     .\vcpkg\vcpkg install blosc:x64-windows
@@ -111,53 +112,50 @@
                     .\vcpkg\vcpkg install boost-interprocess:x64-windows
                 </div>
             </div>
-            <p class="ch_content">Breakdown: .\vcpkg\vcpkg install [packages]:[target]</p>
+            <p class="chContent">Breakdown: .\vcpkg\vcpkg install [packages]:[target]</p>
             <table>
                 <tr>
                     <th>Syntax</th>
-                    <th></th>
                     <th>Explanation</th>
                 </tr>
                 <tr>
                     <td>.\vcpkg\vcpkg</td>
-                    <td>--></td>
                     <td>the .exe file in the subfolder</td>
                 </tr>
                 <tr>
                     <td>install</td>
-                    <td>--></td>
                     <td>command to install</td>
                 </tr>
                 <tr>
                     <td>[packages]:[target]</td>
-                    <td>--></td>
                     <td>package name and target architecture</td>
                 </tr>
             </table>
-            <p class="ch_content">To make use of the libraries within a C++ project in Visual Studio<br>
+            <p class="chContent">To make use of the libraries within a C++ project in Visual Studio<br>
                 All libraries we just downloaded and will be downloaded in the future will be available:</p>
             <div class="pre">
                 <div class="console">.\vcpkg integrate install</div>
             </div>
-            <p class="ch_content">To remove the integration:</p>
+            <p class="chContent">To remove the integration:</p>
             <div class="pre">
                 <div class="console">.\vcpkg integrate remove</div>
             </div>
         </section>
         <section class="ch">
-            <h2 class="ch_title">Build openVDB with CMake</h2>
-            <p class="ch_content">Continue with the openvdb library:</p>
+            <h2 class="chTitle">Build openVDB with CMake</h2>
+            <p class="chContent">Build openVDB with CMakeBuild openVDB with CMake</p>
             <div class="pre">
                 <div class="console">git clone https://github.com/AcademySoftwareFoundation/openvdb</div>
             </div>
-            <p class="ch_content">Once it is done downloading, we can start with the configuration of CMake. But first
+            <p class="chContent">Once it is done downloading, we can start with the configuration of CMake. But first
                 create new folder to build in:</p>
             <div class="pre">
                 <div class="console">mkdir .\openvdb\build
                     cd .\openvdb\build
                 </div>
             </div>
-            <p class="ch_content">XYZ</p>
+            <p class="chContent">Before we can build the project, we need CMake to generate it's "cache".</p>
+            <p class="chContent">Generate the project buildsystem:</p>
             <div class="pre">
                 <div class="console">cmake -DCMAKE_TOOLCHAIN_FILE="D:\VDB\vcpkg\scripts\buildsystems\vcpkg.cmake"
                     DVCPKG_TARGET_TRIPLET=x64-windows -A x64 ..</div>
@@ -165,76 +163,290 @@
             <table>
                 <tr>
                     <th>Syntax</th>
-                    <th></th>
                     <th>Explanation</th>
                 </tr>
                 <tr>
                     <td>cmake</td>
-                    <td>--></td>
                     <td>to execute code in cmake</td>
                 </tr>
                 <tr>
                     <td>-DCMAKE_TOOLCHAIN_FILE="path"</td>
-                    <td>--></td>
                     <td>the path to the vcpkg.cmake file to access the libraries</td>
                 </tr>
                 <tr>
                     <td>DVCPKG_TARGET_TRIPLET=x64-windows</td>
-                    <td>--></td>
                     <td>the architecture of the libraries vcpkg will use</td>
                 </tr>
                 <tr>
                     <td>-A x64</td>
-                    <td>--></td>
                     <td>the target architecture to build to</td>
                 </tr>
                 <tr>
                     <td>..</td>
-                    <td>--></td>
                     <td>where is the CMakeLists.txt to build from (.. means one folder up)</td>
                 </tr>
             </table>
-            <p class="ch_content">XYZ</p>
+            <p class="chContent">Build with:</p>
             <div class="pre">
                 <div class="console">cmake --build . --parallel 4 --config Release --target install</div>
             </div>
             <table>
                 <tr>
                     <th>Syntax</th>
-                    <th></th>
                     <th>Explanation</th>
                 </tr>
                 <tr>
                     <td>cmake</td>
-                    <td>--></td>
                     <td>to execute code in cmake</td>
                 </tr>
                 <tr>
                     <td>--build .</td>
-                    <td>--></td>
-                    <td>to tell cmake we wannt to build followed by a path, the point means where we are right now
-                        (D:/VDB/openvdb/build)</td>
+                    <td>to tell cmake we want to build followed by a path,<br>
+                        the point means where we are right now (D:/VDB/openvdb/build)</td>
                 </tr>
                 <tr>
                     <td>--parallel 4</td>
-                    <td>--></td>
-                    <td>How man parallel jobs should run</td>
+                    <td>How many parallel jobs should run</td>
                 </tr>
                 <tr>
                     <td>--config Release</td>
-                    <td>--></td>
                     <td>X</td>
                 </tr>
                 <tr>
                     <td>--target install</td>
-                    <td>--></td>
                     <td>X</td>
                 </tr>
             </table>
-            <p class="ch_content">If no error occurred while building openvdb, you should find the library and header
+            <p class="chContent">If no error occurred while building openvdb, you should find the library and header
                 files at "C:\Program Files\OpenVDB".</p>
+            <p class="chContent">At this point we are ready to use openVDB.</p>
+        </section>
+        <section class="ch">
+            <h2 class="chTitle">First Project</h2>
+            <p class="chContent">Now we will setup our first project. To show the principle, we will use the “Hello
+                World” project from openVDB. From here on you have the opportunity to select your personal way to go.
+                Just select your preferred editor and read on. Of course, you also can use a simple text editor. In any
+                case we will work within the folder D:\VDB\Cookbook</p>
+            <!-- Tab Header -->
+            <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'CMD')" id="defaultOpen">CMD</button>
+                <button class="tablinks" onclick="openTab(event, 'VSCode')">VS Code</button>
+                <button class="tablinks" onclick="openTab(event, 'VS')">Visual Studio</button>
+            </div>
+            <!-- Tab Content -->
+            <div class="tabcontent" id="CMD">
+                <h3>Without an IDE</h3>
+                <p>First create and enter a new folder:</p>
+                <div class="pre">
+                    <div class="console">mkdir D:\VDB\Cookbook
+                        cd D:\VDB\Cookbook\
+                    </div>
+                </div>
+                <p>Then create the CMakeLists.txt file:</p>
+                <div class="pre">
+                    <div class="console">notepad CMakeLists.txt</div>
+                </div>
+                <p>The Windows Notepad should open and prompt you to create the file. If the file already exist, it just opens it. In any case put the following text in the file:</p>
+                <div class="pre">
+                    <div class="console">cmake_minimum_required(VERSION 3.10)
+                        project("Cookbook")
+                        add_executable(Cookbook "cookbook.cpp")
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>cmake_minimum_required(VERSION &lt;min&gt;)</td>
+                        <td>min version of cmake</td>
+                    </tr>
+                    <tr>
+                        <td>project(&lt;PROJECT-NAME&gt;)</td>
+                        <td>to name the project "Cookbook"</td>
+                    </tr>
+                    <tr>
+                        <td>add_executable(&lt;name&gt; [source]")</td>
+                        <td>On build crate e executable Cookbook<br>with the source cookbook.cpp</td>
+                    </tr>
+                </table>
+                <p>Create a second file named "Cookbook.cpp"</p>
+                <div class="pre">
+                    <div class="console">notepad Cookbook.cpp</div>
+                </div>
+                <p>And add the simple "Hello World" code to the file:</p>
+                <div class="pre">
+                    <div class="console">#include &lt;iostream&gt;
+                        int main() {
+                            std::cout << "Hello World!";
+                            std::cin.get();
+                            return 0;
+                        }
+                    </div>
+                </div>
+                <p>Back in the console, we use CMake to generate it's build system:</p>
+                <div class="pre">
+                    <div class="console">cmake -S . -B ./build</div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>cmake</td>
+                        <td>use a cmake command</td>
+                    </tr>
+                    <tr>
+                        <td>-S [path]</td>
+                        <td>path to source files<br>folder with CMakeLists.txt</td>
+                    </tr>
+                    <tr>
+                        <td>-B [path]</td>
+                        <td>path where to build</td>
+                    </tr>
+                </table>
+                <p>To build:</p>
+                <div class="pre">
+                    <div class="console">cmake --build ./build/</div>
+                </div>
+                <p>CMake will build to "<b>./build/Debug/</b>".</p>
+            </div>
+            <!-- Tab Content -->
+            <div class="tabcontent" id="VSCode">
+                <h3>Visual Studio Code</h3>
+                <p>First, create a new folder and open it in VS-Code:</p>
+                <div class="pre">
+                    <div class="console">mkdir D:\VDB\Cookbook</div>
+                </div>
+                <p>Let's create a file and name it "CMakeLists.txt". at this point the editor should prompt you to
+                    install the <a
+                        href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools">CMake Tools</a>
+                    for VS-Code. Install the extension either throw the prompt or by searching it within the extensions
+                    tab of the editor. I also recomend you to install this <a
+                        href="https://marketplace.visualstudio.com/items?itemName=twxs.cmake">CMake extension</a> for
+                    syntax highliginting.
+                </p>
+                <img src="images/VSCode_1.png" alt="VS Code Extension for CMake">
+                <p>The extensions installed, the editor should prompt you to configure your project. Press Yes and
+                    select your preferred x64 compiler. For this guide I'll use the <i>Visual Studio Community 2022
+                        Release - amd64</i> compiler.
+                    CMake will start generating the building system. If no prompt apears, you can start to process via
+                    the searchbar of VS-Code ">cmake:
+                    configure" or within the searchbar click: Run task --> cmake --> cmake: configure. CMake will create
+                    by default it's build system in
+                    ".\build".<br>
+                </p>
+                <p>Write within the before created txt file:</p>
+                <div class="pre">
+                    <div class="console">cmake_minimum_required(VERSION 3.10)
+                        project("Cookbook")
+                        add_executable(Cookbook "cookbook.cpp")
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>cmake_minimum_required(VERSION &lt;min&gt;)</td>
+                        <td>min version of cmake</td>
+                    </tr>
+                    <tr>
+                        <td>project(&lt;PROJECT-NAME&gt;)</td>
+                        <td>to name the project "Cookbook"</td>
+                    </tr>
+                    <tr>
+                        <td>add_executable(&lt;name&gt; [source]")</td>
+                        <td>On build crate e executable Cookbook<br>with the source cookbook.cpp</td>
+                    </tr>
+                </table>
+                <p>Upon save, CMake should automaticaly reconfigure the project. Else, try the alternative steps I
+                    explained above.</p>
+                <p>To test our setup we create a simple C++ file. Create a new file named "cookbook.cpp" and add
+                    following code to it:</p>
+                    <div class="pre">
+                        <div class="console">#include &lt;iostream&gt;
+                            int main() {
+                                std::cout << "Hello World!";
+                                std::cin.get();
+                                return 0;
+                            }
+                        </div>
+                    </div>
+                <p>If we done all the steps above, it should look similar like that:</p>
+                <img src="images/VSCode_2.png" alt="">
+                <p>Now we can finaly build our test. With <i>Ctrl+Shift+B --> CMake: build</i> or click <i>Terminal -->
+                        Run Build Task --> CMake: build</i> we build our cmake project to
+                    "<b>.\build\Debug\Cookbook.exe</b>".</p>
+            </div>
+            <!-- Tab Content -->
+            <div class="tabcontent" id="VS">
+                <h3>Visual Studio Community</h3>
+                <p>Please make sure you have the <b>C++ Tools for Windows</b> installed.</p>
+                <img src="images/VS_1.png" alt="">
+                <p>Then, open Visual Studio and create a new project of typ "CMake Project".</p>
+                <img src="images/VS_2.png" alt="">
+                <table>
+                    <tr>
+                        <td>Project name</td>
+                        <td>Cookbook</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>D:\VDB\</td>
+                    </tr>
+                </table>
+                <p>Toggle the <i>Place solution and project in the same directory</i> option and click create. Visual
+                    Studio will greet you with a overview page once all files are created.<br>
+                    Let's look through what VS already created for us:
+                </p>
+                <p>Relevant entries within the CMakeLists.txt</p>
+                <table>
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td>cmake_minimum_required(VERSION &lt;min&gt;)</td>
+                        <td>min version of cmake</td>
+                    </tr>
+                    <tr>
+                        <td>project(&lt;PROJECT-NAME&gt;)</td>
+                        <td>to name the project "Cookbook"</td>
+                    </tr>
+                    <tr>
+                        <td>add_executable(&lt;name&gt; [source1] [source2]")</td>
+                        <td>On build crate a executable Cookbook<br>with the source "Cookbook.cpp" & "Cookbook.h"</td>
+                    </tr>
+                </table>
+                <p>Within the Cookbook.cpp we already got a "Hello World" example but we'll add a line to it. At the end, it should look like this:</p>
+                <div class="pre">
+                    <div class="console">#include "Cookbook.h"
+                        using namespace std;
+                        int main()
+                        {
+                            cout << "Hello CMake." << endl;
+                            std::cin.get();
+                            return 0;
+                        }
+                    </div>
+                </div>
+                <p>With <i>Ctrl+Shift+B</i> we build the CMake project. <b>Note:</b> Visual Studio does not use the default folder
+                    structure of CMake, the build system and the executable will be generatet at "<b>.\out\build\x64-debug\</b>".</p>
+                </div>
+        </section>
+        <section class="ch">
+            <h2 class="chTitle">OpenVDB Hello World</h2>
+            <p class="chContent">
+
+            </p>
         </section>
     </div>
+    <script src="../js/tabs.js"></script>
+    <script>document.getElementById("defaultOpen").click();</script>
 </body>
 
 </html>
