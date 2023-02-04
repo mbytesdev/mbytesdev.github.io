@@ -1,0 +1,58 @@
+:root {
+    --code-ff: monospace;
+    --code-clr: #c9d1d9;
+    --code-bgclr: #161b22;
+    --code-border: #535353;
+}
+.pre {
+    margin: 1rem 0 0 0;
+    padding: 1rem;
+    border: 3px solid var(--code-border);
+    line-height: 1.4em;
+    overflow: auto;
+    border-radius: 10px;
+    background-clip: padding-box;
+    background-color: var(--code-bgclr);
+}
+.code {
+    margin: 0;
+    padding: 0px 4px;
+    display: inline-block;
+    font-family: var(--code-ff);
+    color: var(--code-clr);
+    background-clip: padding-box;
+    background-color: var(--code-bgclr);
+    white-space: pre-line;
+}
+.console {
+    margin: 0;
+    padding: 0px 4px;
+    display: inline-block;
+    font-family: var(--ff-secondary);
+    color: var(--code-clr);
+    background-clip: padding-box;
+    background-color: var(--code-bgclr);
+    white-space: pre-line;
+}
+
+span.key {
+    color: #569cd6;
+}
+span.class {
+    color: #4ec9b0;
+}
+span.func {
+    color: #dcdcaa;
+}
+span.local {
+    color: #95dcfe;
+}
+span.str {
+    color: #d69d85;
+}
+span.logic {
+    color: #d8a0df;
+}
+span.num {
+    color: #b5cea8;
+}

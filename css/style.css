@@ -3,18 +3,20 @@ html {
 }
 
 :root {
-    --ff-primary: 'Source Code Pro', monospace;
-    --ff-secondary: '';
+    --ff-primary: "Segoe UI";
+    --ff-secondary: "Source Code Pro";
 
     --fw-reg: 300;
     --fw-bold: 900;
 
     --clr-light: #fff;
     --clr-dark: #000;
-    --clr-accent: #c210f8;
+    --clr-accent: #00fbff;
+    --clr-accent-2: #e100ff;
     --clr-gm4: linear-gradient(to bottom right, rgb(125, 0, 0), rgb(0, 0, 125));
 
-    --fs-h1: 1.4rem;
+    --fs-header: 2rem;
+    --fs-h1: 1.5rem;
     --fs-h2: 1.2rem;
     --fs-h3: 1rem;
     --fs-body: 1rem;
@@ -40,6 +42,15 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+header {
+    margin: 1.5em 2em 2em 2em;
+}
+
+header h1 {
+    font-size: var(--fs-header);
+    margin: 0;
+}
+
 .main {
     margin: 0 2em 0 2em;
     padding: 0 0 3rem 0;
@@ -47,21 +58,59 @@ body::-webkit-scrollbar {
 
 @media (min-width: 900px) {
     :root {
-        --fs-h1: 3.5rem;
-        --fs-h2: 2.75rem;
-        --fs-h3: 1.75rem;
-        --fs-body: 1.25rem;
+        --fs-h1: 2.5rem;
+        --fs-h2: 2.2rem;
+        --fs-h3: 1rem;
+        --fs-body: 1rem;
     }
 
     .main {
         margin: 0 5em 0 5em;
         padding: 0 0 3rem 0;
     }
+
+    header {
+        margin: 2rem 5rem 5rem 5rem;
+    }
+
+    header h1 {
+        font-size: var(--fs-header);
+    }
 }
 
 /* Typography */
-h1, h2, h3 { line-height: 1.1; }
-h1 { font-size: var(--fs-h1); }
-h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
-p { font-size: var(--fs-h3); }
+h1,h2,h3 {
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+p {
+    font-size: var(--fs-h3);
+}
+
+a:link {
+    color: #00ff00;
+}
+
+a:visited {
+    color: yellow;
+}
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: pink;
+}

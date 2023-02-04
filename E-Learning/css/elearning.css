@@ -1,45 +1,74 @@
 .pagehead {
     display: flex;
-    padding: 3rem 0 1rem 0;
 }
 
-.pagehead img {
-    margin-right: 1rem;
-    height: var(--fs-h1);
-    width: auto;
+.pagehead div {
+    margin: 0.2em 1em 0 0;
+    height: var(--fs-header);
+    width: var(--fs-header);
+    height: 3rem;
+    width: 3rem;
+    background-image: url("../../images/Logo_Simple_Round_Black.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.pagehead h1 {
-    margin: 0;
-    height: var(--fs-h1);
-}
-
-.ch__title {
-    margin: 0;
-    padding: 2rem 0 1rem 0;
-}
-
-.ch__img {
+.pagehead a {
+    display: block;
+    height: 100%;
     width: 100%;
 }
 
-.ch_content {
+ul.content-list {
+    list-style-type: circle;
+}
+
+.chTitle {
+    margin: 0;
+    padding: 3rem 0 1rem 0;
+    font-family: var(--ff-secondary);
+    color: var(--clr-accent)
+}
+
+.ch img {
+    width: 100%;
+}
+
+.chContent {
     margin: 0;
     padding: 1rem 0 0 0;
     text-align: justify;
 }
 
-@media (min-width: 900px) {
-    .pagehead {
-        display: flex;
-        padding: 3rem 0 4rem 0;
-    }
-
-    .ch__title {
-        padding: 6rem 0 4rem 0;
-    }
+.ch_double_content {
+    display: block;
 }
 
+table {
+    padding: 1rem 0 0 0;
+    width: 100%;
+}
+
+th {
+    border-bottom: 2px solid #ffffff80;
+}
+
+tr,
+td {
+    border-bottom: 1px dashed #ffffff80;
+}
+
+@media (min-width: 900px) {
+
+    .chTitle {
+        padding: 4rem 0 1rem 0;
+    }
+
+    .ch_double_content {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
 
 .dual {
     display: grid;
