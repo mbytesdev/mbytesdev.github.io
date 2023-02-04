@@ -14,10 +14,12 @@
     margin: 0;
     padding: 1rem 0 0 0;
 }
+
 /* About Me */
 .about {
     display: block;
 }
+
 .about img {
     display: none;
     box-shadow: var(--bs);
@@ -27,9 +29,11 @@
     margin-bottom: 2em;
     padding: 0;
 }
+
 .about p {
     margin: 0;
 }
+
 /* Projects */
 .projects {
     display: block;
@@ -58,6 +62,35 @@
 .proContent {
     margin: 0;
 }
+
+.guide {
+    display: flex;
+}
+
+.guide div {
+    margin: 1rem;
+    height: calc(var(--fs-h2)*2);
+    width: calc(var(--fs-h2)*2);
+    background-image: url("../images/Logo_Simple_Round_Black.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.guide div a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.guide h3 {
+    margin: auto 1rem auto 0;
+    font-size: var(--fs-h3);
+}
+
+.guide p {
+    margin: auto 1rem auto 0;
+}
+
 @media (min-width: 900px) {
     .about {
         display: grid;
@@ -87,6 +120,7 @@
     .about p {
         padding-top: 2rem;
     }
+
     .projects {
         display: grid;
         grid-column-gap: 6rem;
@@ -111,6 +145,7 @@
         text-align: justify;
     }
 }
+
 /* Footer */
 .footer {
     background-color: #ffffff40;
