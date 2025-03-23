@@ -1,0 +1,142 @@
+/* Header */
+nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h1);
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+}
+
+.nav-toggle {
+    padding: .5em;
+    position: absolute;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    /*Position*/
+    right: 2rem;
+    top: 2rem;
+    z-index: 1000;
+}
+
+/* js */
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(45deg);
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(10px);
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
+/* button */
+.hamburger {
+    display: block;
+    position: relative;
+    height: var(--fs-h1);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    /* Line Width */
+    width: 3rem;
+    /* Line Height */
+    height: 5px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+/* Top Line */
+.hamburger::before {
+    top: -10px;
+}
+
+/* Bottom Line */
+.hamburger::after {
+    bottom: -10px;
+}
+
+@media (min-width: 900px) {
+    .nav-toggle {
+        padding: 1em;
+        position: absolute;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        /*Position*/
+        right: 4.4rem;
+        top: 2.2rem;
+        z-index: 1000;
+    }
+
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(10px);
+    }
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        /* Line Width */
+        width: 3em;
+        /* Line Height */
+        height: 4px;
+        background: red;
+    }
+
+    /* Top Line */
+    .hamburger::before {
+        top: -10px;
+    }
+
+    /* Bottom Line */
+    .hamburger::after {
+        bottom: -10px;
+    }
+}
